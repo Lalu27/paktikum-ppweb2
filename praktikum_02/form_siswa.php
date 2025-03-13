@@ -1,5 +1,4 @@
 <?php
-// Ambil data dari form
 $proses = $_POST['proses'];
 $nama_siswa = $_POST['nama'];
 $mata_kuliah = $_POST['matkul'];
@@ -7,17 +6,14 @@ $nilai_uts = $_POST['nilai_uts'];
 $nilai_uas = $_POST['nilai_uas'];
 $nilai_tugas = $_POST['nilai_tugas'];
 
-// Menghitung Nilai Akhir (30% UTS, 35% UAS, 35% Tugas)
 $nilai_akhir = ($nilai_uts * 0.3) + ($nilai_uas * 0.35) + ($nilai_tugas * 0.35);
 
-// Menentukan Status Kelulusan
 if ($nilai_akhir > 55) {
     $status = "Lulus";
 } else {
     $status = "Tidak Lulus";
 }
 
-// Menentukan Grade
 if ($nilai_akhir >= 0 && $nilai_akhir <= 35) {
     $grade = "E";
 } elseif ($nilai_akhir >= 36 && $nilai_akhir <= 55) {
@@ -29,10 +25,9 @@ if ($nilai_akhir >= 0 && $nilai_akhir <= 35) {
 } elseif ($nilai_akhir >= 85 && $nilai_akhir <= 100) {
     $grade = "A";
 } else {
-    $grade = "I"; // Jika nilai di luar rentang 0-100
+    $grade = "I";
 }
 
-// Menentukan Predikat menggunakan Switch
 switch ($grade) {
     case "E":
         $predikat = "Sangat Kurang";

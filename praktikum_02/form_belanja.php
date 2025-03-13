@@ -81,12 +81,10 @@
 
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Menangkap data yang di-input
             $nama_customer = $_POST['nama'];
             $produk = $_POST['produk'];
             $jumlah = $_POST['jumlah'];
 
-            // Menghitung total belanja
             $harga = 0;
             switch ($produk) {
                 case 'TV':
@@ -105,7 +103,6 @@
 
             $total_belanja = $harga * $jumlah;
 
-            // Mencetak hasil
             echo "<div class='col-12 col-md-8 mt-4'>";
             echo "<h4>Hasil Belanja</h4>";
             echo "<hr />";
