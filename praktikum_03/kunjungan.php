@@ -29,8 +29,8 @@ if (isset($_POST["submit"])){
 </head>
 <body>
     <div class="container my-5">
-        <h2>Kunjungan Tamu</h2>
-        <table>
+        <h2 mb-4>Kunjungan Tamu</h2>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>timestamp</th>
@@ -39,7 +39,7 @@ if (isset($_POST["submit"])){
                     <th>Message</th>
                 </tr>
             </thead>
-            <tbody table table-bordered>
+            <tbody>
                 <?php foreach ($_SESSION['bukutamu'] as $entry): ?>
                     <tr>
                         <td>
